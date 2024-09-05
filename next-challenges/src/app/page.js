@@ -1,7 +1,10 @@
-import Image from "next/image";
+import ChallengesContainer from "@/components/ChallengesContainer";
 
 export default function Home() {
   return (
-   <div>challenges</div>
+    <div>
+      <div>Challenges Solver</div>
+      <ChallengesContainer />
+    </div>
   );
 }
