@@ -6,7 +6,6 @@ const findPairWithSum = (numbers, targetSum) => {
   //Crear una variable que vaya acumulando los valores del array leídos por el posterior bucle.
   const pastNumbers = new Set();
 
-  //Crear un bucle que recorra cada elemento del array para buscar un par compatible.
   for (let i = 0; i < numbers.length; i++) {
     //Evaluar si existe un elemento previamente leído por el bucle que, sumado al elemento actualmente evaluado,
     //sea igual a "targetSum".

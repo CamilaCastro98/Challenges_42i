@@ -11,7 +11,6 @@ const findNonConstructibleChange = (coins) => {
   //posible que puede evaluarse.
   let change = 1;
 
-  //Crear un bucle que recorra todos los elementos del array ordenado.
   for (let i = 0; i < orderedCoins.length; i++) {
     //Evaluar si el elemento actual en el bucle es más grande que el valor acumulado de "change".
     if (orderedCoins[i] > change) {
