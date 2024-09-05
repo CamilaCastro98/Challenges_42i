@@ -35,9 +35,9 @@ const Challenge1 = () => {
               const errors = {};
               if (!values.numbers) {
                 errors.numbers = "This field is required";
-              } else if (!/^\d+(,\d+)*$/.test(values.numbers)) {
+              } else if (!/^[+-]?\d+(?:,[+-]?\d+)*$/.test(values.numbers)) {
                 errors.numbers =
-                  "Input should only contain numbers separated by commas";
+                  "Input should only contain integers separated by commas";
               }
               if (!values.targetSum) {
                 errors.targetSum = "This field is required";
