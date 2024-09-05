@@ -10,4 +10,4 @@ const findNonConstructibleChange = (coins) => {
   return change;
 };
 
-export default findNonConstructibleChange;
+module.exports = findNonConstructibleChange;
