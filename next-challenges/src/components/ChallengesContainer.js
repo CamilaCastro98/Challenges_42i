@@ -1,3 +1,5 @@
+// Componente que muestra los formularios de los challenges de forma responsiva, utilizando Tailwind CSS.
+
 import Challenge1 from "./Challenge1";
 import Challenge2 from "./Challenge2";
 

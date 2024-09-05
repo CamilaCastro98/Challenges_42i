@@ -1,3 +1,6 @@
+//Componente que permite al usuario ingresar inputs y encontrar la solución
+//Para el challenge "Find Non Constructible Change". Consta de un form y de un div para visualizar el resultado.
+
 "use client";
 import React, { useState } from "react";
 import { Formik } from "formik";
@@ -5,6 +8,10 @@ import findNonConstructibleChange from "@/challenges/findChange";
 
 const Challenge2 = () => {
   const [result, setResult] = useState("");
+
+  //Función que se ejecuta al submitear los valores del form.
+  //Convertir los valores a un array para que puedan ser interpetados correctamente por la función findNonConstructibleChange.
+  //Actualizar valor del resultado.
   const handleFormSubmit = (values) => {
     const coinsArray = values.coins.split(",").map(Number);
     const solution = findNonConstructibleChange(coinsArray);
@@ -21,6 +28,7 @@ const Challenge2 = () => {
             Enter a comma-separated list of coin values. (To input an empty
             array, simply enter 0).
           </p>
+          {/* Formulario realizado con librería Formik. */}
           <Formik
             initialValues={{ coins: "" }}
             validate={(values) => {
@@ -74,6 +82,7 @@ const Challenge2 = () => {
           </Formik>
         </div>
       </div>
+      {/* Div que contiene la solución al problema e imprime el valor de result. */}
       <div className="px-5 py-3 font-semibold bg-red-500 rounded-b-sm">
         SOLUTION: {result}
       </div>

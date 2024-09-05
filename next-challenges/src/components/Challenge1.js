@@ -1,3 +1,6 @@
+//Componente que permite al usuario ingresar inputs y encontrar la solución
+//Para el challenge "Find Pair With Sum". Consta de un form y de un div para visualizar el resultado.
+
 "use client";
 import React, { useState } from "react";
 import { Formik } from "formik";
@@ -5,12 +8,17 @@ import findPairWithSum from "@/challenges/findPairWithSum";
 
 const Challenge1 = () => {
   const [result, setResult] = useState("");
+
+  //Función que se ejecuta al submitear los valores del form.
+  //Convertir los valores a un array y un número para que puedan ser interpetados correctamente por la función findPairWithSum.
+  //Actualizar valor del resultado.
   const handleFormSubmit = (values) => {
     const numbersArray = values.numbers.split(",").map(Number);
     const targetSum = parseInt(values.targetSum, 10);
     const solution = findPairWithSum(numbersArray, targetSum).join(",");
     setResult(`[${solution}]`);
   };
+
   return (
     <>
       <div className="flex flex-col p-5 pb-8 bg-blue-500 rounded-t-sm lg:h-[400px]">
@@ -20,6 +28,7 @@ const Challenge1 = () => {
             Enter a comma-separated list of numbers and a target sum. (To input
             an empty array, simply enter 0).
           </p>
+          {/* Formulario realizado con librería Formik. */}
           <Formik
             initialValues={{ numbers: "", targetSum: "" }}
             validate={(values) => {
@@ -95,6 +104,7 @@ const Challenge1 = () => {
           </Formik>
         </div>
       </div>
+      {/* Div que contiene la solución al problema e imprime el valor de result. */}
       <div className="px-5 py-3 font-semibold bg-blue-600 rounded-b-sm">
         SOLUTION: {result}
       </div>

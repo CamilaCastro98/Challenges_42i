@@ -1,3 +1,5 @@
+// Componente principal que renderiza la página de inicio.
+
 import ChallengesContainer from "@/components/ChallengesContainer";
 
 export default function Home() {
