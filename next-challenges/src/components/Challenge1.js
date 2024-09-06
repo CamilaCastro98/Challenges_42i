@@ -35,7 +35,7 @@ const Challenge1 = () => {
               const errors = {};
               if (!values.numbers) {
                 errors.numbers = "This field is required";
-              } else if (!/^[+-]?\d+(?:,[+-]?\d+)*$/.test(values.numbers)) {
+              } else if (!/^[+-]?\d+(?:,[+-]?\d+)*$/.test(values.numbers)) { //Se utilizó IA para crear la expresión regex
                 errors.numbers =
                   "Input should only contain integers separated by commas";
               }
